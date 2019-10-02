@@ -5,10 +5,10 @@ const arrayMovie1 = ["tt0096895", "tt1201607", "tt4667248", "tt0230600", "tt6155
 /*const btnShowMovie = document.getElementById("show");
 btnShowMovie.addEventListener("click", fetchMovie);*/
 
-const showAlone = document.getElementById("btn-alone");
+const showAlone = document.getElementById("nobtn-alone");
 showAlone.addEventListener("click", () => {
 
-    const showAloneContainer = document.getElementById("alone");
+    const showAloneContainer = document.getElementById("no-alone");
     showAloneContainer.style.display="block"; 
 
     const hiddenPeople = document.getElementById("people");
@@ -28,13 +28,13 @@ showPeople.addEventListener("click", () => {
     const hiddenbuttonPeople = document.getElementById("buttonPeople");
     hiddenbuttonPeople.style.display="none";
 
-    const hiddenAlone = document.getElementById("alone");
+    const hiddenAlone = document.getElementById("no-alone");
     hiddenAlone.style.display="none";
 
 })
 
 
-const btnAlone = document.getElementById("btn-alone");
+const btnAlone = document.getElementById("nobtn-alone");
 btnAlone.addEventListener ("click", fetchMovie);
 
 function fetchMovie()
@@ -44,7 +44,6 @@ function fetchMovie()
     .then (data => {
         document.getElementById("showAloneMovie").innerHTML +=
             `<div class="cards">
-            <img src=${data.Poster}>
                 <p>${data.Title}</p>
                 <p>${data.Id} </p>
                 </div>`
@@ -53,6 +52,7 @@ function fetchMovie()
         })
 }
 
+//crear buscador
 
 let container = document.getElementById("showMovie");
 sendInfoMovie =document.getElementById("send")
@@ -67,11 +67,17 @@ fetch(request)
     const data1= data.Search
     data1.forEach(elemnt=> {
             container.innerHTML += 
-            `<div class="cards">
-                <h3>${elemnt.Title}</h3>
-                <img src=${elemnt.Poster}>
+            `<div class="cards"> 
+            <div class="cards2"> 
+            <div class="cards3">  
+                <h3 class="title">${elemnt.Title}</h3>
+                <img class="imgPoster" src=${elemnt.Poster}>
                 <p>${elemnt.Year}</p>
+                </div>
+                </div>
            </div>`
+           
+           
     })
     //const data1= data.Search.
 })
@@ -108,10 +114,15 @@ console.log(arraySelected);
         .then (data=> {
             let container = document.getElementById("showMovie");
             container.innerHTML += 
-            `<div class="cards">
-            <img src=${data.Poster}>
-                <h3>${data.Title}</h3>
-                <p>${data.Genre}</p>`
+            `<div class="cards"> 
+            <div class="cards2"> 
+            <div class="cards3">
+            <h3 class="title">${data.Title}</h3>
+            <img class="imgPoster" src=${data.Poster}>
+            <p>${data.Genre}</p>
+       </div>
+       </div>
+       </div>`
 
         }
         )
@@ -132,10 +143,14 @@ arraySelected.map(function(Id){
     .then (data=> {
         let container = document.getElementById("showMovie");
         container.innerHTML += 
-        `<div class="cards">
-            <h3>${data.Title}</h3>
-            <img src=${data.Poster}>
+        `<div class="cards"> 
+            <div class="cards2"> 
+            <div class="cards3">
+            <h3 class="title">${data.Title}</h3>
+            <img class="imgPoster" src=${data.Poster}>
             <p>${data.Genre}</p>
+       </div>
+       </div>
        </div>`
 }
 
