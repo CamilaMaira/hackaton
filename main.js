@@ -44,6 +44,7 @@ function fetchMovie()
     .then (data => {
         document.getElementById("showAloneMovie").innerHTML +=
             `<div class="cards">
+            <img src=${data.Poster}>
                 <p>${data.Title}</p>
                 <p>${data.Id} </p>
                 </div>`
@@ -118,4 +119,3 @@ arraySelected.map(function(Id){
 })
 
 });
-
