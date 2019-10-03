@@ -1,4 +1,3 @@
-  
 html,body { 
     height:100%; 
     margin:0;
@@ -71,7 +70,6 @@ html,body {
 
 
 
-
 #people .center {
     display: flex;
     justify-content:space-around;
@@ -82,7 +80,7 @@ html,body {
 .cards {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-#showMovie{
+#showMovie ,#showAloneMovie{
     display: flex;
     flex-direction: row;
     flex-flow: wrap;
@@ -128,3 +126,17 @@ html,body {
     margin:20px
     
 }
+#random{
+    display: none;
+}
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
